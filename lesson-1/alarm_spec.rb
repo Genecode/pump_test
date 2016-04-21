@@ -17,5 +17,4 @@ class Alarm
 end
 
 RSpec.describe Alarm do
-
 end

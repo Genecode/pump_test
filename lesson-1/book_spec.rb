@@ -27,5 +27,4 @@ class Book
 end
 
 RSpec.describe Book do
-
 end
