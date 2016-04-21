@@ -1,7 +1,7 @@
 require "spec_helper"
 
 class EmailCampaign
-  DEFAULT_PLAIN_TEXT_SIGNATURE = "\n\n--\n Awesome Mail.app, http://awesomemail.app/"
+  DEFAULT_PLAIN_TEXT_SIGNATURE = "\n\n--\n Awesome Mail.app, http://awesomemail.app/".freeze
 
   attr_reader :subject, :body, :scheduled_on
 
@@ -30,5 +30,4 @@ class EmailCampaign
 end
 
 RSpec.describe EmailCampaign do
-
 end
