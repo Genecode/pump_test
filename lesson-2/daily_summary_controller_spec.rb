@@ -46,7 +46,7 @@ end
 
 class User
   attr_reader :email, :email_notifications_enabled
-  alias :email_notifications_enabled? :email_notifications_enabled
+  alias email_notifications_enabled? email_notifications_enabled
 
   def initialize(email:, email_notifications_enabled: true)
     @email = email
