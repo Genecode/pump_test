@@ -29,7 +29,7 @@ class TodoPresenter
   end
 end
 
-describe TodoPresenter do
+RSpec.describe TodoPresenter do
   describe "#as_json" do
     context "todo's target is Post" do
       before do

@@ -18,7 +18,7 @@ class Account
   end
 end
 
-describe Account do
+RSpec.describe Account do
   context "#active" do
     before do
       @active_accounts = create_list(:account, 2)
