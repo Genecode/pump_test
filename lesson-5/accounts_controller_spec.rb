@@ -5,17 +5,17 @@ REPOSITORY = {
   pending_account: []
 }.freeze
 
-class Account
-  def self.active
-    REPOSITORY[:account]
-  end
-end
-
 def create_list(what, amount)
   model = double(what)
   amount.times { REPOSITORY[what] << model }
 
   REPOSITORY[what]
+end
+
+class Account
+  def self.active
+    REPOSITORY[:account]
+  end
 end
 
 describe Account do
