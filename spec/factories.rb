@@ -5,7 +5,8 @@ FactoryGirl.define do
   end
 
   factory :risk do
-    risk "low"
+    impact "low"
     likelihood "low"
+    scale
   end
 end

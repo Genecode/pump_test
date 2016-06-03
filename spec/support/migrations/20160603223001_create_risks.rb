@@ -3,6 +3,7 @@ class CreateRisks < ActiveRecord::Migration
     create_table :risks do |t|
       t.string :impact
       t.string :likelihood
+      t.references :scale, null: false
     end
   end
 end

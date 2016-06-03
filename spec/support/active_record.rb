@@ -10,6 +10,7 @@ RSpec.configure do |config|
       adapter: "sqlite3",
       database: TEST_DATABASE
     )
+    ActiveRecord::Migration.verbose = false
     ActiveRecord::Migrator.migrate(File.expand_path('../migrations', __FILE__))
     ActiveRecord::Base.logger = Logger.new(STDOUT)
   end
