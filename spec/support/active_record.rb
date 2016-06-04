@@ -11,7 +11,7 @@ RSpec.configure do |config|
       database: TEST_DATABASE
     )
     ActiveRecord::Migration.verbose = false
-    ActiveRecord::Migrator.migrate(File.expand_path('../migrations', __FILE__))
+    ActiveRecord::Migrator.migrate(File.expand_path("../migrations", __FILE__))
     ActiveRecord::Base.logger = Logger.new(STDOUT)
   end
 
@@ -19,4 +19,3 @@ RSpec.configure do |config|
     FileUtils.rm_f(TEST_DATABASE)
   end
 end
-

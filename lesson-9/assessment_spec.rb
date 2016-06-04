@@ -13,7 +13,8 @@ class Assessment
   delegate :impact, :likelihood, to: :risk
 
   def initialize(risk, scale)
-    @risk, @scale = risk, scale
+    @risk = risk
+    @scale = scale
   end
 
   def score
@@ -41,4 +42,3 @@ RSpec.describe Assessment, ar: true do
   describe "#score" do
   end
 end
-
