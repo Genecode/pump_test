@@ -1,9 +1,5 @@
 require "spec_helper"
 
-def create(*args)
-  double(*args)
-end
-
 class TodoPresenter
   attr_reader :todo
 
@@ -30,6 +26,10 @@ class TodoPresenter
 end
 
 RSpec.describe TodoPresenter do
+  def create(*args)
+    double(*args)
+  end
+
   describe "#as_json" do
     context "todo's target is Post" do
       before do

@@ -5,13 +5,6 @@ REPOSITORY = {
   pending_account: []
 }.freeze
 
-def create_list(what, amount)
-  model = double(what)
-  amount.times { REPOSITORY[what] << model }
-
-  REPOSITORY[what]
-end
-
 class Account
   def self.active
     REPOSITORY[:account]
@@ -19,6 +12,13 @@ class Account
 end
 
 RSpec.describe Account do
+  def create_list(what, amount)
+    model = double(what)
+    amount.times { REPOSITORY[what] << model }
+
+    REPOSITORY[what]
+  end
+
   context "#active" do
     before do
       @active_accounts = create_list(:account, 2)
