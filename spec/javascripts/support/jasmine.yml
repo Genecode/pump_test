@@ -51,7 +51,8 @@ helpers:
 #   - **/*[sS]pec.js
 #
 spec_files:
-  - '**/*[sS]pec.js'
+  - 'lesson*/**/*[sS]pec.js'
+  - 'lesson*/**/*[sS]pec.coffee'
 
 # src_dir
 #
@@ -73,7 +74,7 @@ src_dir:
 #
 # spec_dir: spec/javascripts
 #
-spec_dir:
+spec_dir: "."
 
 # spec_helper
 #
