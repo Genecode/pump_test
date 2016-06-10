@@ -21,12 +21,21 @@ GEM
     factory_girl (4.7.0)
       activesupport (>= 3.0.0)
     i18n (0.7.0)
+    jasmine (2.4.0)
+      jasmine-core (~> 2.4)
+      phantomjs
+      rack (>= 1.2.1)
+      rake
+    jasmine-core (2.4.1)
     json (1.8.3)
     minitest (5.9.0)
     parser (2.3.1.0)
       ast (~> 2.2)
+    phantomjs (2.1.1.0)
     powerpack (0.1.1)
+    rack (1.6.4)
     rainbow (2.1.0)
+    rake (11.1.2)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -59,6 +68,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   factory_girl
+  jasmine
   rspec
   rubocop
   sqlite3
