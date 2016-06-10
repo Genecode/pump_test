@@ -1,2 +1,2 @@
-require 'jasmine'
-load 'jasmine/tasks/jasmine.rake'
+require "jasmine"
+load "jasmine/tasks/jasmine.rake"
