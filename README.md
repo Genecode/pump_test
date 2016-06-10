@@ -1,4 +1,4 @@
-# Домашние задания к «[Тестовой рассылке](http://vasily.polovnyov.ru/tests/)»
+# Домашние задания к «[Тестовому курсу](http://vasily.polovnyov.ru/tests/)»
 
 ## Установка
 
