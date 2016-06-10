@@ -21,6 +21,9 @@ git checkout -b username-lesson-1
 
 ```shell
 bin/rspec lesson-1
+
+# для тестов из десятого урока
+bin/rake jasmine:ci
 ```
 
 Если все в порядке, комитьте, заливайте на сервер и открывайте пулреквест:
