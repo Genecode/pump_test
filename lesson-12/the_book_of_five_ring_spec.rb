@@ -3,9 +3,7 @@ require "capybara/webkit"
 
 Capybara.javascript_driver = :webkit
 
-Capybara::Webkit.configure do |config|
-  config.allow_unknown_urls
-end
+Capybara::Webkit.configure(&:allow_unknown_urls)
 
 # Попробуйте Капибару как инструмент автоматизации ручных проверок.
 #
