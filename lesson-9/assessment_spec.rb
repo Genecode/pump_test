@@ -1,7 +1,18 @@
 require "spec_helper"
 
 class Scale < ActiveRecord::Base
+  serialize :impacts
+  serialize :likelihoods
+
   validates :impacts, :likelihoods, presence: true
+  validate :impacts_and_likelihoods_should_be_iterable
+
+  private
+
+  def impacts_and_likelihoods_should_be_iterable
+    errors.add(:impacts, "should be array-like") unless impacts.respond_to?(:each)
+    errors.add(:likelihoods, "should be array-like") unless likelihoods.respond_to?(:each)
+  end
 end
 
 class Risk < ActiveRecord::Base
