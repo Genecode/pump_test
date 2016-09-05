@@ -8,7 +8,7 @@ class Alarm
   end
 
   def to_human_string
-    at.strftime("%k:%M")
+    at.strftime("%k:%M").strip
   end
 
   def snooze_for(minutes)
