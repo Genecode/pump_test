@@ -1,5 +1,8 @@
 require "factory_girl"
 
+require "active_support"
+require "active_support/core_ext"
+
 require "support/active_record"
 
 RSpec.configure do |config|
