@@ -1,5 +1,9 @@
 require "spec_helper"
 
+# Question — вопрос, на который отвечают эксперты.
+#
+# `#answer` возвращает наиболее полезный ответ.
+# `#address_to` пересылает вопрос эксперту почтой.
 class Question
   attr_reader :summary, :responses
 
