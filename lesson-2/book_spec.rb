@@ -1,5 +1,14 @@
 require "spec_helper"
 
+# Book — книга в библиотечном каталоге.
+#
+# `#epub?` возвращает true/false в зависимости от расширения книги (.epub или что-то другое).
+# `#download_url` возвращает ссылку на скачивание книги. Книги сгруппированы по первой букве
+# в названии книги:
+#
+# * /system/a/anatomy.pdf
+# * /system/a/ants.epub
+# * /system/x/xfiles.epub
 class Book
   attr_reader :path
 
