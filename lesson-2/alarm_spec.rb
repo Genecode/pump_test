@@ -1,5 +1,9 @@
 require "spec_helper"
 
+# Alarm — будильник, установленный на определенное время (`at`).
+#
+# `#to_human_string` возвращает время в человеческом формате: 22:30, 6:50.
+# `#snooze_for` откладывает будильник, дает вздремнуть еще `minutes` минут.
 class Alarm
   attr_accessor :at
 

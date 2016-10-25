@@ -1,5 +1,9 @@
 require "spec_helper"
 
+# EmailCampaign — почтовая рассылка.
+#
+# `#schedule_on` ставит рассылку на отправку в указанное время `date`.
+# `#to_plain_text` собирает письмо в текстовом виде.
 class EmailCampaign
   DEFAULT_PLAIN_TEXT_SIGNATURE = "\n\n--\n Awesome Mail.app, http://awesomemail.app/".freeze
 
