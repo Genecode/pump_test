@@ -1,12 +1,12 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :scale do
-    impacts %w(low medium high)
-    likelihoods %w(low medium high)
+    impacts { %w(low medium high) }
+    likelihoods { %w(low medium high) }
   end
 
   factory :risk do
-    impact "low"
-    likelihood "low"
+    impact { "low" }
+    likelihood { "low" }
     scale
   end
 end

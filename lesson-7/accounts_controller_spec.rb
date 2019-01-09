@@ -12,7 +12,7 @@ class Account
 end
 
 RSpec.describe Account do
-  # Не трогайте `#create_list` — это фейковая реализация аналогичного метода из FactoryGirl
+  # Не трогайте `#create_list` — это фейковая реализация аналогичного метода из FactoryBot
   def create_list(what, amount)
     model = double(what)
     amount.times { REPOSITORY[what] << model }
