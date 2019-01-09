@@ -2,11 +2,8 @@ source "https://rubygems.org"
 
 gem "rspec"
 gem "rubocop", require: false
-gem "factory_girl"
+gem "factory_bot"
 gem "sqlite3"
 gem "activerecord"
-gem "jasmine"
-gem "sprockets"
-gem "coffee-script"
 gem "capybara"
 gem "capybara-webkit"

@@ -26,7 +26,7 @@ class TodoPresenter
 end
 
 RSpec.describe TodoPresenter do
-  # Не трогайте `#create` — это фейковая реализация аналогичного метода из FactoryGirl
+  # Не трогайте `#create` — это фейковая реализация аналогичного метода из FactoryBot
   def create(*args)
     double(*args)
   end

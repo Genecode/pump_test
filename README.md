@@ -21,9 +21,6 @@ git checkout -b username-lesson-1
 
 ```shell
 bin/rspec lesson-1
-
-# для тестов из десятого урока
-bin/rake jasmine:ci
 ```
 
 Если все в порядке, комитьте, заливайте на сервер и открывайте пулреквест:
@@ -35,6 +32,6 @@ git push origin -u username-lesson-1
 
 Чтобы узнать больше о пулреквестах и бранчах, прочтите:
 
-* [Ветвление в Гит](https://git-scm.com/book/ru/v1/%D0%92%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-Git-%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%B2%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8-%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D1%8F);
-* [Creating and deleting branches within your repository](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/);
-* [Creating a pull request](https://help.github.com/articles/creating-a-pull-request/).
+* [Ветвление в Гит](https://git-scm.com/book/ru/v1/%D0%92%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-Git-%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%B2%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8-%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D1%8F)
+* [Creating and deleting branches within your repository](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/)
+* [Creating a pull request](https://help.github.com/articles/creating-a-pull-request/)
