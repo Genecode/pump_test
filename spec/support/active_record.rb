@@ -2,8 +2,8 @@ require "active_record"
 require "logger"
 require "fileutils"
 
-TEST_DATABASE = File.expand_path("../../tmp/db.sqlite3", __FILE__).freeze
-MIGRATIONS_PATH = File.expand_path("../migrations", __FILE__).freeze
+TEST_DATABASE = File.expand_path("../tmp/db.sqlite3", __dir__).freeze
+MIGRATIONS_PATH = File.expand_path("migrations", __dir__).freeze
 
 RSpec.configure do |config|
   config.before(:each, ar: true) do
