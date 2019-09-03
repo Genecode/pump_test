@@ -1,22 +1,20 @@
 require "capybara/rspec"
-require "capybara/webkit"
+require "selenium-webdriver"
 
-Capybara.javascript_driver = :webkit
-
-Capybara::Webkit.configure(&:allow_unknown_urls)
+Capybara.javascript_driver = :selenium_chrome_headless
 
 # Попробуйте Капибару как инструмент автоматизации ручных проверок.
 #
-# По адресу http://vasily.polovnyov.ru/5rings/ находится
+# По адресу https://vasily.polovnyov.ru/5rings/ находится
 # мини-книжка, которая умеет:
 # * запоминать и восстанавливать текущую позицию в книге;
 # * добавлять параграфы в закладки;
 # * менять заголовок страницы на заголовок у текущей главы.
 #
-# Протестируйте эти сценарии, используя execute_script/evaluate_script.
+# Протестируйте эти сценарии.
 
 feature "The Book of Five Rings", js: true do
-  let(:book_url) { "http://vasily.polovnyov.ru/5rings/" }
+  let(:book_url) { "https://vasily.polovnyov.ru/5rings/" }
 
   scenario "Remember current reading position" do
     visit book_url
