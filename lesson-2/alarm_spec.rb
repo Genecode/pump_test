@@ -21,4 +21,18 @@ class Alarm
 end
 
 RSpec.describe Alarm do
+  let (:time) { Time.local(2019, 10, 9, 10, 35) }
+  let(:alarm) { Alarm.new(at: time) }
+
+  describe '#to_human_string' do
+    it 'return 10:35' do
+      expect(alarm.to_human_string).to eq('10:35')
+    end
+  end
+
+  describe '#snooze_for' do
+    it 'increase alarm timer on 5 min' do
+      expect { alarm.snooze_for(5) }.to change { alarm.at }.by(5.minute)
+    end
+  end
 end
