@@ -1,5 +1,4 @@
 require "spec_helper"
-ActiveSupport::Duration
 # Alarm — будильник, установленный на определенное время (`at`).
 #
 # `#to_human_string` возвращает время в человеческом формате: 22:30, 6:50.
@@ -21,17 +20,25 @@ class Alarm
 end
 
 RSpec.describe Alarm do
-  let (:time) { Time.local(2019, 10, 9, 10, 35) }
-  let(:alarm) { Alarm.new(at: time) }
+  describe "#to_human_string" do
+    context "when afternoon " do
+      let(:time) { Time.local(2019, 10, 9, 10, 35) }
+      subject { described_class.new(at: time).to_human_string }
 
-  describe '#to_human_string' do
-    it 'returns formatted time' do
-      expect(alarm.to_human_string).to eq('10:35')
+      it { is_expected.to eq("10:35") }
+    end
+
+    context "when forenoon" do
+      let(:time) { Time.local(2019, 10, 9, 2, 35) }
+      subject { described_class.new(at: time).to_human_string }
+
+      it { is_expected.to eq("2:35") }
     end
   end
 
-  describe '#snooze_for' do
-    it 'shifts alarm timer' do
+  describe "#snooze_for" do
+    subject(:alarm) { described_class.new(at: Time.local(2019, 10, 9, 10, 35)) }
+    it "snoozes alarm timer for given minute" do
       expect { alarm.snooze_for(5) }.to change { alarm.at }.by(5.minutes)
     end
   end

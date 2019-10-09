@@ -34,7 +34,7 @@ class EmailCampaign
 end
 
 RSpec.describe EmailCampaign do
-  let(:email_campaign) { EmailCampaign.new(subject: "Test subject", body: "Test body") }
+  let(:email_campaign) { described_class.new(subject: "Test subject", body: " Test body  ") }
 
   describe '#schedule_on' do
     it 'sets scheduled date' do
@@ -46,8 +46,15 @@ RSpec.describe EmailCampaign do
   describe '#to_plain_text' do
     subject { email_campaign.to_plain_text }
 
-    it { is_expected.to include('Subject: Test subject') }
-    it { is_expected.to include('Test body') }
-    it { is_expected.to include(EmailCampaign::DEFAULT_PLAIN_TEXT_SIGNATURE) }
+
+    it { is_expected.to start_with('Subject: Test subject') }
+    it "strips whitespaces from body" do
+      expect(subject).to match(/^Test body$/)
+    end
+
+    it "joins all email parts with newline" do
+      sign = described_class::DEFAULT_PLAIN_TEXT_SIGNATURE
+      expect(subject).to eq("Subject: Test subject\nTest body#{sign}")
+    end
   end
 end
