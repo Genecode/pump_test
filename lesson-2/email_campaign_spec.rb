@@ -34,18 +34,20 @@ class EmailCampaign
 end
 
 RSpec.describe EmailCampaign do
-  let(:email_campaign) { EmailCampaign.new(subject: "Test subject", body: "test body") }
+  let(:email_campaign) { EmailCampaign.new(subject: "Test subject", body: "Test body") }
 
   describe '#schedule_on' do
-    it 'set scheduled date' do
-      expect { email_campaign.schedule_on('10.10.2019') }.to change {email_campaign.scheduled_on}.to('10.10.2019')
+    it 'sets scheduled date' do
+      expect { email_campaign.schedule_on('10.10.2019') }
+        .to change { email_campaign.scheduled_on }.to('10.10.2019')
     end
   end
 
   describe '#to_plain_text' do
-    plain_mail_text = "Subject: Test subject\ntest body\n\n--\n Awesome Mail.app, http://awesomemail.app/"
-    it 'return full email in text format' do
-      expect(email_campaign.to_plain_text).to match(plain_mail_text)
-    end
+    subject { email_campaign.to_plain_text }
+
+    it { is_expected.to include('Subject: Test subject') }
+    it { is_expected.to include('Test body') }
+    it { is_expected.to include(EmailCampaign::DEFAULT_PLAIN_TEXT_SIGNATURE) }
   end
 end
