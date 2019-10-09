@@ -37,28 +37,29 @@ end
 
 RSpec.describe Book do
   describe '#epub?' do
-    context 'when file *.epub' do
+    context 'when file is *.epub?' do
       let(:book) { Book.new(path: '/system/x/xfiles.epub') }
 
       it 'returns true' do
-        expect(book.epub?).to be_truthy
+        expect(book).to be_epub
       end
     end
 
-    context 'wneh file not *.epub' do
+    context 'wneh file is not *.epub' do
       let(:book) { Book.new(path: '/system/x/xfiles.pdf') }
 
       it 'returns false' do
-        expect(book.epub?).to be_falsey
+        expect(book).not_to be_epub
       end
     end
   end
 
   describe '#download_url' do
-    let(:book) { Book.new(path: 'xfiles.pdf') }
+    subject { Book.new(path: 'xfiles.pdf').download_url }
 
-    it 'returns  /system/x/xfiles.pdf ' do
-      expect(book.download_url).to  eq('/system/x/xfiles.pdf')
+    it { is_expected.to include('/x/') }
+    it 'returns file path  with  based on file name prefix, like:  xfiles.pdf => system/x/xfiles.pdf ' do
+      expect(subject).to eq('/system/x/xfiles.pdf')
     end
   end
 end
