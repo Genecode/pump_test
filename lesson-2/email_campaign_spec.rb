@@ -45,9 +45,9 @@ RSpec.describe EmailCampaign do
 
   describe "#to_plain_text" do
     it "joins all email parts with newline" do
-      sign = described_class::DEFAULT_PLAIN_TEXT_SIGNATURE
+      signature = described_class::DEFAULT_PLAIN_TEXT_SIGNATURE
 
-      expect(email_campaign.to_plain_text).to eq("Subject: Test subject\nTest body#{sign}")
+      expect(email_campaign.to_plain_text).to eq("Subject: Test subject\nTest body#{signature}")
     end
   end
 end
