@@ -21,23 +21,28 @@ end
 
 RSpec.describe Alarm do
   describe "#to_human_string" do
-    context "when afternoon " do
+    context "when afternoon" do
       let(:time) { Time.local(2019, 10, 9, 10, 35) }
-      subject { described_class.new(at: time).to_human_string }
+      let(:alarm) { described_class.new(at: time) }
 
-      it { is_expected.to eq("10:35") }
+      it "returns time`s string" do
+        expect(alarm.to_human_string).to eq("10:35")
+      end
     end
 
     context "when forenoon" do
       let(:time) { Time.local(2019, 10, 9, 2, 35) }
-      subject { described_class.new(at: time).to_human_string }
+      let(:alarm) { described_class.new(at: time) }
 
-      it { is_expected.to eq("2:35") }
+      it "returns stripped time`s string" do
+        expect(alarm.to_human_string).to eq("2:35")
+      end
     end
   end
 
   describe "#snooze_for" do
-    subject(:alarm) { described_class.new(at: Time.local(2019, 10, 9, 10, 35)) }
+    let(:alarm) { described_class.new(at: 0) }
+
     it "snoozes alarm timer for given minute" do
       expect { alarm.snooze_for(5) }.to change { alarm.at }.by(5.minutes)
     end
