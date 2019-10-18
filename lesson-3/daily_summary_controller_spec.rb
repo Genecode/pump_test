@@ -65,4 +65,17 @@ class User
 end
 
 RSpec.describe DailySummaryController do
+  subject { described_class.new(current_user: true) }
+
+  it { is_expected.to have_attributes(current_user: true) }
+
+
+  describe "#test" do
+    let(:current_user) { instance_double(User, email: 'test@mail.ru', email_notifications_enabled: true) }
+
+  end
+
+  describe "#deliver" do
+
+  end
 end
