@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "activerecord", "5.2.3"
+gem "activerecord", "6.1.7.1"
 gem "capybara"
 gem "selenium-webdriver"
 gem "factory_bot"
