@@ -15,6 +15,7 @@ script/bootstrap
 ```shell
 git checkout master
 git checkout -b username-lesson-1
+# some comment for up 
 ```
 
 Как напишете тесты, проверьте их:
